@@ -8,10 +8,12 @@ const App = () => {
   const restart = () => {
     const newBoard = new Board();
     newBoard.initCells();
+    newBoard.addFigures();
     setBoard(newBoard);
   };
   useEffect(() => {
     restart();
+    // eslint-disable-next-line
   }, []);
   return (
     <div className='app'>
