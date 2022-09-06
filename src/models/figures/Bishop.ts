@@ -1,9 +1,7 @@
 import { Cell } from '../Cell';
 import { Colors } from '../Colors';
 import { Figure, FigureNames } from './Figure';
-// @ts-ignore
 import blackLogo from '../../assets/black-bishop.png';
-// @ts-ignore
 import whiteLogo from '../../assets/white-bishop.png';
 
 export class Bishop extends Figure {
