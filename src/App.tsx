@@ -13,7 +13,6 @@ const App = () => {
   };
   useEffect(() => {
     restart();
-    // eslint-disable-next-line
   }, []);
   return (
     <div className='app'>

@@ -1,9 +1,7 @@
 import { Cell } from '../Cell';
 import { Colors } from '../Colors';
 import { Figure, FigureNames } from './Figure';
-// @ts-ignore
 import blackLogo from '../../assets/black-pawn.png';
-// @ts-ignore
 import whiteLogo from '../../assets/white-pawn.png';
 
 export class Pawn extends Figure {

@@ -1,5 +1,4 @@
 import { Colors } from '../Colors';
-// @ts-ignore
 import logo from '../../assets/black-king.png';
 import { Cell } from '../Cell';
 
