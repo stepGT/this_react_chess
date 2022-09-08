@@ -10,7 +10,15 @@ interface BoardProps {
 
 const BoardComponent: FC<BoardProps> = ({ board, setBoard }) => {
   const [selectedCell, setSelectedCell] = useState<Cell | null>(null);
-  const clickCell = (cell: Cell) => cell.figure && setSelectedCell(cell);
+  const clickCell = (cell: Cell) => {
+    if (selectedCell && selectedCell !== cell && selectedCell.figure?.canMove(cell)) {
+      selectedCell.moveFigure(cell);
+      setSelectedCell(null);
+      updateBoard();
+    } else {
+      setSelectedCell(cell);
+    }
+  };
   const highlightCells = () => {
     board.highlightCells(selectedCell);
     updateBoard();
