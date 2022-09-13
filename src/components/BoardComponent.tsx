@@ -38,19 +38,22 @@ const BoardComponent: FC<BoardProps> = ({ board, setBoard, currentPlayer, switch
     highlightCells();
   }, [selectedCell])
   return (
-    <div className='board'>
-      {board.cells.map((row, index) => (
-        <React.Fragment key={index}>
-          {row.map((cell) => (
-            <CellComponent
-              key={cell.id}
-              selectedCell={cell.x === selectedCell?.x && cell.y === selectedCell?.y}
-              cell={cell}
-              clickCell={clickCell}
-            />
-          ))}
-        </React.Fragment>
-      ))}
+    <div>
+      <h3>Current player: {currentPlayer?.color}</h3>
+      <div className="board">
+        {board.cells.map((row, index) => (
+          <React.Fragment key={index}>
+            {row.map((cell) => (
+              <CellComponent
+                key={cell.id}
+                selectedCell={cell.x === selectedCell?.x && cell.y === selectedCell?.y}
+                cell={cell}
+                clickCell={clickCell}
+              />
+            ))}
+          </React.Fragment>
+        ))}
+      </div>
     </div>
   );
 };
