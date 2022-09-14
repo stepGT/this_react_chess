@@ -6,9 +6,12 @@ import { Bishop } from './figures/Bishop';
 import { Pawn } from './figures/Pawn';
 import { Knight } from './figures/Knight';
 import { Rook } from './figures/Rook';
+import { Figure } from './figures/Figure';
 
 export class Board {
   cells: Cell[][] = [];
+  lostBlackFigures: Figure[] = [];
+  lostWhiteFigures: Figure[] = [];
 
   public highlightCells(selectedCell: Cell | null) {
     for (let i = 0; i < this.cells.length; i++) {
@@ -23,6 +26,8 @@ export class Board {
   public getCopyBoard(): Board {
     const newBoard = new Board();
     newBoard.cells = this.cells;
+    newBoard.lostBlackFigures = this.lostBlackFigures;
+    newBoard.lostWhiteFigures = this.lostWhiteFigures;
     return newBoard;
   }
 
