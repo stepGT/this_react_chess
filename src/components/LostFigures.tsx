@@ -13,7 +13,7 @@ const LostFigures: FC<LostFiguresProps> = ({ title, figures }) => {
       {figures.map((figure) => {
         return (
           <div key={figure.id}>
-            {figure.name} {figure.logo && <img src={figure.logo} />}
+            {figure.name} {figure.logo && <img width={20} height={20} src={figure.logo} />}
           </div>
         );
       })}
